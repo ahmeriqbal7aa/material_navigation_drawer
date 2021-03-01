@@ -19,7 +19,7 @@ class _MyDrawerState extends State<MyDrawer> {
               gradient: LinearGradient(colors: [Colors.blue, Colors.green]),
             ),
             accountName: Text('Ahmer Iqbal'),
-            accountEmail: Text('meharahmer5253@gmail.com'),
+            accountEmail: Text('ahmer5253@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: Text('A'),
               backgroundColor: Colors.white,
@@ -89,17 +89,28 @@ class _MyDrawerState extends State<MyDrawer> {
             // selected: true,
           ),
           Divider(thickness: 1.0),
+          ListTile(
+            leading: Icon(Icons.bug_report),
+            title: Text('Bug'),
+            onTap: () {
+              print('Pressed');
+            },
+            enabled: false,
+            // selected: true,
+          ),
+          Divider(thickness: 1.0),
           Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,
               child: ListTile(
-                leading: Icon(Icons.bug_report),
-                title: Text('Bug'),
+                leading: Icon(Icons.close),
+                title: Text('Close'),
                 onTap: () {
+                  Navigator.of(context).pop();
                   print('Pressed');
                 },
-                enabled: false,
-                // selected: true,
+                // enabled: false,
+                selected: true,
               ),
             ),
           )
